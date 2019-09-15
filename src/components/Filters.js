@@ -9,7 +9,7 @@ class Filters extends React.Component {
           <form>
             <input id="email" type="text" value={email} onChange={handleEmail}></input>
             <label htmlFor="email" ></label>
-            <p>{isCompromise != true ? '' : 'Tu email está comprometido'}</p>
+            <p>{isCompromise ? 'Tu email está comprometido' : ''}</p>
           </form>
         </React.Fragment>   
        );

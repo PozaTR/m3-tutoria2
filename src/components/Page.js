@@ -8,10 +8,10 @@ import PropTypes from 'prop-types';
 
 class Page extends React.Component {
     render() {
-      const {email, handleEmail, isCompromise, users} = this.props;
+      const {date, email, handleEmail, isCompromise, users} = this.props;
         return(
             <React.Fragment>
-              <Header />
+              <Header date={date}/>
               <Filters 
               email={email}
               handleEmail={handleEmail}
@@ -29,7 +29,7 @@ Page.propTypes = {
   email: PropTypes.string,
   handleEmail: PropTypes.func,
   isCompromise: PropTypes.bool,
-  users: PropTypes.arrayOf(PropTypes.obj)
+  users: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default Page;

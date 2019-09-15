@@ -6,8 +6,8 @@ class DataList extends React.Component {
     render() {
         return(
             <ul>
-            {this.props.users.map(user => 
-            <DataCard user={user} />
+            {this.props.users.map((user, index) => 
+            <DataCard key={`dataCard-${index}`} user={user} />
             )}
           </ul>
         );
@@ -15,7 +15,7 @@ class DataList extends React.Component {
 }
 
 DataList.propTypes={
-  users: PropTypes.arrayOf(PropTypes.obj)
+  users: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default DataList;

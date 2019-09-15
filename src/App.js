@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import Mock from './Mock';
+//import Mock from './Mock';
 import Page from './components/Page';
+import { fetchUsers } from './services/UsersServices';
 
 
 
@@ -9,16 +10,26 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    const users = Mock.map((user, index) => ({
-      id: index,
-      ...user
-    }));
-
     this.state = {
-      users: users,
+      users: [],
       email: '',
-      usersFiltered: users
+      usersFiltered: [],
+      date: ''
     }
+    
+    fetchUsers().then(resp => {
+      const mappedUsers = resp.data.map((user, index) => ({
+        id: index,
+        ...user
+      }));
+
+      this.setState({
+          date: resp.date,
+          users: mappedUsers,
+          usersFiltered: mappedUsers
+        }
+      ) 
+    });
 
     this.handleEmail = this.handleEmail.bind(this);
   }
@@ -36,6 +47,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Page
+          date={this.state.date}
           users={this.state.usersFiltered}
           email={this.state.email}
           handleEmail={this.handleEmail}
