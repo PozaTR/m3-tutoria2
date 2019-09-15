@@ -3,7 +3,6 @@ import './App.css';
 import Mock from './Mock';
 import Page from './components/Page';
 import Footer from './components/Footer';
-import Filters from './components/Filters';
 
 
 class App extends React.Component {
@@ -11,8 +10,8 @@ class App extends React.Component {
     super(props);
 
     const users = Mock.map((user, index) => ({
-        id: index,
-        ...user
+      id: index,
+      ...user
     }));
 
     this.state = {
@@ -21,7 +20,7 @@ class App extends React.Component {
       usersFiltered: users
     }
 
-    this.handleEmail=this.handleEmail.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
   }
 
   handleEmail(event) {
@@ -36,13 +35,13 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Page users={this.state.usersFiltered}/>
-        <Filters
+        <Page
+          users={this.state.usersFiltered}
           email={this.state.email}
           handleEmail={this.handleEmail}
-          isCompromise={this.state.usersFiltered.length === 1 && this.state.usersFiltered[0].email === this.state.email}/>
+          isCompromise={this.state.usersFiltered.length === 1 && this.state.usersFiltered[0].email === this.state.email} />
         <Footer />
-      </React.Fragment>   
+      </React.Fragment>
     );
   }
 }
