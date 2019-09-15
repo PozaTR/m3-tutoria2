@@ -5,8 +5,8 @@ class DataList extends React.Component {
     render() {
         return(
             <ul>
-            {this.props.users.map((user,userIndex) => 
-            <DataCard user={user} userIndex={userIndex}/>
+            {this.props.users.map(user => 
+            <DataCard user={user} />
             )}
           </ul>
         );

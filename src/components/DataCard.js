@@ -2,15 +2,15 @@ import React from 'react';
 
 class DataCard extends React.Component {
     render() {
-        const {user, userIndex} = this.props
+        const {user} = this.props
         return(
           <React.Fragment>
-              <li key={`user-${userIndex}`}>
+              <li key={`user-${user.id}`}>
                 <p>{user.name}</p>
                 <p>{user.email}</p>
                 <ul>
                   {user.passwords.map((password,passwordIndex) =>
-                    <li key={`password-${userIndex}-${passwordIndex}`}>
+                    <li key={`password-${user.id}-${passwordIndex}`}>
                       {password}
                     </li>
                   )}
