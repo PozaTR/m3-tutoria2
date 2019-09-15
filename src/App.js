@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Mock from './Mock';
 import Page from './components/Page';
-import Footer from './components/Footer';
+
 
 
 class App extends React.Component {
@@ -40,7 +40,6 @@ class App extends React.Component {
           email={this.state.email}
           handleEmail={this.handleEmail}
           isCompromise={this.state.usersFiltered.length === 1 && this.state.usersFiltered[0].email === this.state.email} />
-        <Footer />
       </React.Fragment>
     );
   }

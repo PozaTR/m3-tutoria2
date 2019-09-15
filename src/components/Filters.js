@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Filters extends React.Component {
    render() {
@@ -13,6 +14,12 @@ class Filters extends React.Component {
         </React.Fragment>   
        );
    }
+}
+
+Filters.propTypes={
+  email: PropTypes.string,
+  handleEmail: PropTypes.func,
+  isCompromise: PropTypes.bool
 }
 
 export default Filters;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Status extends React.Component {
   render() {
@@ -10,6 +11,10 @@ class Status extends React.Component {
       <p>{`Mostrando ${this.props.number} registro${this.props.number > 1 ? 's' : ''}`}</p>
     )
   }
+}
+
+Status.propTypes = {
+  number: PropTypes.number,
 }
 
 export default Status;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class DataCard extends React.Component {
     render() {
@@ -23,6 +24,10 @@ class DataCard extends React.Component {
           </React.Fragment>
         );
     }
+}
+
+DataCard.propTypes = {
+  user: PropTypes.object
 }
 
 export default DataCard;
