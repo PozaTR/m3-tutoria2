@@ -7,22 +7,24 @@ import Footer from './Footer';
 import PropTypes from 'prop-types';
 
 class Page extends React.Component {
-    render() {
-      const {date, email, handleEmail, isCompromise, users} = this.props;
-        return(
-            <React.Fragment>
-              <Header date={date}/>
-              <Filters 
-              email={email}
-              handleEmail={handleEmail}
-              isCompromise={isCompromise}
-              />
-              <Status number={users.length}/>
-              <DataList users={users}/>
-              <Footer />
-            </React.Fragment>
-        );
-    }
+  render() {
+    const { date, email, handleEmail, isCompromise, users } = this.props;
+    return (
+      <React.Fragment>
+        <Header date={date} />
+        <main>
+          <Filters
+            email={email}
+            handleEmail={handleEmail}
+            isCompromise={isCompromise}
+          />
+          <Status number={users.length} />
+          <DataList users={users} />
+        </main>
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }
 
 Page.propTypes = {

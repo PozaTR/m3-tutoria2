@@ -44,14 +44,15 @@ class App extends React.Component {
   }
 
   render() {
+    const {date, usersFiltered, email} = this.state
     return (
       <React.Fragment>
         <Page
-          date={this.state.date}
-          users={this.state.usersFiltered}
-          email={this.state.email}
+          date={date}
+          users={usersFiltered}
+          email={email}
           handleEmail={this.handleEmail}
-          isCompromise={this.state.usersFiltered.length === 1 && this.state.usersFiltered[0].email === this.state.email} />
+          isCompromise={usersFiltered.length === 1 && usersFiltered[0].email === email} />
       </React.Fragment>
     );
   }
